@@ -31,7 +31,5 @@ public class AuthSuccessHandler extends ClientSocketHandler {
 	@Override
 	public void handleInternally(String content) {
 		getManager().getEventManager().handle(new AuthSuccessEvent(getClient(), getServer(), getManager()));
-		WebSocketClient.WEBSOCKET_LOG.info(
-				String.format("Authorized websocket for server %s", getServer().getIdentifier()));
 	}
 }
